@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
+import { useHistory } from 'react-router-dom';
+
+
 
 import InputControl from "../InputControl/InputControl";
 import { auth } from "../../firebase";
@@ -35,6 +39,10 @@ function Login() {
         setErrorMsg(err.message);
       });
   };
+
+ 
+  
+  
   return (
     <div className={styles.container}>
       <div className={styles.innerBox}>
@@ -61,10 +69,11 @@ function Login() {
             Login
           </button>
           <p>
-            Already have an account?{" "}
+          Already have an account?{" "}
             <span>
               <Link to="/signup">Sign up</Link>
             </span>
+          
           </p>
         </div>
       </div>
@@ -73,3 +82,4 @@ function Login() {
 }
 
 export default Login;
+

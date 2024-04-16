@@ -9,6 +9,7 @@ import { auth } from "./firebase";
 
 import "./App.css";
 
+
 function App() {
   const [userName, setUserName] = useState("");
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/" element={<Home name={userName} />} />
+        
         </Routes>
       </Router>
     </div>
